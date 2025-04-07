@@ -1,0 +1,27 @@
+[2025-04-07T18:06:17.709+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-07T18:06:17.718+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_update.update_marketcap_volume manual__2025-04-07T18:06:13.655700+00:00 [queued]>
+[2025-04-07T18:06:17.724+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_update.update_marketcap_volume manual__2025-04-07T18:06:13.655700+00:00 [queued]>
+[2025-04-07T18:06:17.725+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-07T18:06:17.741+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): update_marketcap_volume> on 2025-04-07 18:06:13.655700+00:00
+[2025-04-07T18:06:17.748+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'daily_update', 'update_marketcap_volume', 'manual__2025-04-07T18:06:13.655700+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/daily_update.py', '--cfg-path', '/tmp/tmpfxba5o7i']
+[2025-04-07T18:06:17.750+0000] {standard_task_runner.py:105} INFO - Job 25: Subtask update_marketcap_volume
+[2025-04-07T18:06:17.751+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=547) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-07T18:06:17.752+0000] {standard_task_runner.py:72} INFO - Started process 577 to run task
+[2025-04-07T18:06:17.790+0000] {task_command.py:467} INFO - Running <TaskInstance: daily_update.update_marketcap_volume manual__2025-04-07T18:06:13.655700+00:00 [running]> on host 159965489b0b
+[2025-04-07T18:06:17.950+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='daily_update' AIRFLOW_CTX_TASK_ID='update_marketcap_volume' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T18:06:13.655700+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T18:06:13.655700+00:00'
+[2025-04-07T18:06:17.951+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-07T18:06:17.962+0000] {daily_update.py:124} INFO - Pulling market cap and volume data from CoinGecko
+[2025-04-07T18:06:28.082+0000] {daily_update.py:135} INFO - Successfully pulled market cap and volume data from CoinGecko for ethereum
+[2025-04-07T18:06:38.179+0000] {daily_update.py:135} INFO - Successfully pulled market cap and volume data from CoinGecko for bitcoin
+[2025-04-07T18:06:48.289+0000] {daily_update.py:135} INFO - Successfully pulled market cap and volume data from CoinGecko for solana
+[2025-04-07T18:06:58.451+0000] {daily_update.py:135} INFO - Successfully pulled market cap and volume data from CoinGecko for cardano
+[2025-04-07T18:07:08.555+0000] {daily_update.py:135} INFO - Successfully pulled market cap and volume data from CoinGecko for ripple
+[2025-04-07T18:07:08.555+0000] {daily_update.py:158} INFO - Loading market cap data into BigQuery
+[2025-04-07T18:07:08.934+0000] {daily_update.py:165} INFO - Loading volume data into BigQuery
+[2025-04-07T18:07:09.125+0000] {daily_update.py:172} INFO - Successfully loaded  market cap and volume data into BigQuery
+[2025-04-07T18:07:09.128+0000] {python.py:240} INFO - Done. Returned value was: 0
+[2025-04-07T18:07:09.158+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-07T18:07:09.158+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=daily_update, task_id=update_marketcap_volume, run_id=manual__2025-04-07T18:06:13.655700+00:00, execution_date=20250407T180613, start_date=20250407T180617, end_date=20250407T180709
+[2025-04-07T18:07:09.207+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-07T18:07:09.229+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-07T18:07:09.234+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
